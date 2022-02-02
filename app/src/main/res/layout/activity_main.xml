@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <VideoView
+        android:id="@+id/video"
+        android:layout_width="297dp"
+        android:layout_height="320dp"
+        android:soundEffectsEnabled="false"
+        app:layout_constraintBaseline_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/portada1" />
+
+    <Button
+        android:id="@+id/btn_reproduir"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/reproducir"
+        android:onClick="PlayPause"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/detener"
+        android:onClick="Stop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/btn_anterior"
+        app:layout_constraintRight_toRightOf="@id/btn_reproduir" />
+
+    <Button
+        android:id="@+id/btn_bucle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/no_repetir"
+        android:onClick="Repetir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/btn_reproduir"
+        app:layout_constraintRight_toRightOf="@id/btn_seguent" />
+
+    <Button
+        android:id="@+id/btn_anterior"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/anterior"
+        android:onClick="Anterior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/btn_stop" />
+
+    <Button
+        android:id="@+id/btn_seguent"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/siguiente"
+        android:onClick="Seguent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/btn_bucle"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo"
+        android:textColor="#00FFEA"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/video"
+        app:layout_constraintTop_toBottomOf="@id/btn_reproduir"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
